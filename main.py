@@ -48,6 +48,11 @@ while True:
             result = num1 % num2
         else:
             print("Error: Division by zero is not allowed.")
+
+    if result is None:
+        num1 = float(input("Enter first number: "))
+        continue
+
     print("________________________________")
     print(f"Result: {result}\n")
 
