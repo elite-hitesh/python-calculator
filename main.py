@@ -69,6 +69,10 @@ while True:
 
     continue_operation = input("Do you want to continue, restart or quit this operation? (c/ r/ q): ").lower()
 
+    while continue_operation not in ['c', 'r', 'q']:
+        print("Invalid input. Please enter: \n'c' to continue, \n'r' to restart, or \n'q' to quit.")
+        continue_operation = input("Do you want to continue, restart or quit this operation? (c/ r/ q): ").lower()
+
     if continue_operation == 'c':
         num1 = result
         past_result = True
