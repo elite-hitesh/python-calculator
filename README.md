@@ -15,6 +15,8 @@ A simple command-line calculator built with Python on Arch Linux. This is a proj
 
 -Exponential
 -Modulus
+-Square
+-Square root
 
 3. Bugs Fixed
 
