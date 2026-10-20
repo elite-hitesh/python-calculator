@@ -43,7 +43,6 @@ while True:
             result = num1 / num2
         else:
             print("Error: Division by zero is not allowed.")
-            recalculation = True
     elif operation == "**":
         result = num1 ** num2
     elif operation == "%":
@@ -51,7 +50,6 @@ while True:
             result = num1 % num2
         else:
             print("Error: Division by zero is not allowed.")
-            recalculation = True
 
     if result is None:
         if past_result:
@@ -77,7 +75,7 @@ while True:
 
     elif continue_operation == 'r':
         past_result = False
-        
+
         while True:
             try:
                 num1 = float(input("Enter first number: "))
