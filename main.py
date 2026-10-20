@@ -1,18 +1,32 @@
 #First project - 'Python Calculator'
 print("\n--- Python Calculator ---\n")
-num1 = float(input("Enter first number: "))
 
 while True:
+    try:
+        num1 = float(input("Enter first number: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+        continue
+    
+while True:
+
     operation = input("Enter operator (+, -, *, /, **, %, q): ").lower()
     
     if operation == "q":
         print("Calculator closed.")
         break
     elif operation not in ["+", "-", "*", "/", "**", "%"]:
-        print("Invalid operator. Please enter a valid operator (+, -, *, /, **, %, q).")
+        print("Invalid operator. Please enter a valid operator (+, -, *, /, **, %, q): ")
         continue
-
-    num2 = float(input("Enter second number: "))
+    
+    while True:
+        try:
+            num2 = float(input("Enter second number: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
 
     result = None
 
@@ -42,7 +56,13 @@ while True:
     if continue_operation == 'c':
         num1 = result
     elif continue_operation == 'r':
-        num1 = float(input("Enter first number: "))
+        while True:
+            try:
+                num1 = float(input("Enter first number: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+                continue
     elif continue_operation == 'q':
         print(f"\nFinal Result: {result}\n")
         break
