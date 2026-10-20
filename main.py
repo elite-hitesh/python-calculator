@@ -1,6 +1,8 @@
 #First project - 'Python Calculator'
 print("\n--- Python Calculator ---\n")
 
+past_result = False
+
 while True:
     try:
         num1 = float(input("Enter first number: "))
@@ -41,6 +43,7 @@ while True:
             result = num1 / num2
         else:
             print("Error: Division by zero is not allowed.")
+            recalculation = True
     elif operation == "**":
         result = num1 ** num2
     elif operation == "%":
@@ -48,8 +51,19 @@ while True:
             result = num1 % num2
         else:
             print("Error: Division by zero is not allowed.")
+            recalculation = True
 
     if result is None:
+        if past_result:
+            continue
+        
+        while True:
+            try:
+                num1 = float(input("Enter first number: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+                continue
         continue
 
     print("________________________________")
@@ -59,7 +73,11 @@ while True:
 
     if continue_operation == 'c':
         num1 = result
+        past_result = True
+
     elif continue_operation == 'r':
+        past_result = False
+        
         while True:
             try:
                 num1 = float(input("Enter first number: "))
