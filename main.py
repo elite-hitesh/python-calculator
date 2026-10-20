@@ -1,4 +1,17 @@
 #First project - 'Python Calculator'
+
+
+def square(num1):
+    return num1 ** 2
+
+
+def square_root(num1):
+    if num1 < 0:
+        return "Error: Cannot calculate square root of a negative number."
+    else:
+        return num1 ** 0.5
+
+
 print("\n--- Python Calculator ---\n")
 
 past_result = False
@@ -13,14 +26,27 @@ while True:
     
 while True:
 
-    operation = input("Enter operator (+, -, *, /, **, %, q): ").lower()
+    operation = input("Enter operator (+, -, *, /, **, %, sq, sqrt, q): ").lower()
     
     if operation == "q":
         print("Calculator closed.")
         break
-    elif operation not in ["+", "-", "*", "/", "**", "%"]:
+    elif operation not in ["+", "-", "*", "/", "**", "%", "sq", "sqrt"]:
         print("Invalid operator. Please enter a valid operator (+, -, *, /, **, %, q): ")
         continue
+
+    if operation == "sq":
+        result = square(num1)
+        print("________________________________")
+        print(f"Result: {result}\n")
+        break
+    elif operation == "sqrt":
+        result = square_root(num1)
+        print("________________________________")
+        print(f"Result: {result}\n")
+        break
+    else:
+        break
     
     while True:
         try:
@@ -57,7 +83,7 @@ while True:
         
         while True:
             try:
-                num1 = float(input("Enter first number: "))
+                num1 = float(input("\nEnter first number: "))
                 break
             except ValueError:
                 print("Invalid input. Please enter a valid number.")
@@ -82,7 +108,7 @@ while True:
 
         while True:
             try:
-                num1 = float(input("Enter first number: "))
+                num1 = float(input("\nEnter first number: "))
                 break
             except ValueError:
                 print("Invalid input. Please enter a valid number.")

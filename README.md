@@ -4,14 +4,22 @@ A simple command-line calculator built with Python on Arch Linux. This is a proj
 
 ##Features
 
+1. Arithmetic Operations
+
 -Addition
 -Subtraction
 -Multiplication
 -Division
--Square of number
+
+2. Math Operations
+
+-Exponential
 -Modulus
+
+3. Bugs Fixed
+
 -Division-by-zero error handling
--Invalid operator handling
+-Invalid input handling
 
 ##Requirements
 
