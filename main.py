@@ -50,7 +50,6 @@ while True:
             print("Error: Division by zero is not allowed.")
 
     if result is None:
-        num1 = float(input("Enter first number: "))
         continue
 
     print("________________________________")
